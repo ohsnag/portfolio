@@ -1,0 +1,1407 @@
+@charset "utf-8";
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&display=swap');
+/*font-family: 'Nanum Gothic', sans-serif;*/
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    color: #464646;
+    letter-spacing: 0.1px;
+
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: block;
+    line-height: 0;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+}
+
+h5 {
+    font-size: 0.7rem;
+    line-height: 0.7rem;
+}
+
+button {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: crimson;
+    color: white;
+}
+
+/* header */
+header {
+    height: 100%;
+    height: 170px;
+    background-color: #fff;
+
+    position: relative;
+}
+
+.top-nav {
+    width: 100%;
+    height: 50px;
+    background-color: #243c84;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* header 고정 */
+.top-fixed {
+    height: 120px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid #d9d9d9;
+    z-index: 1;
+}
+
+.top-fixed .top-nav {
+    display: none;
+}
+
+.top-fixed .top-logo {
+    top: 30px;
+}
+
+/* top-menu (tab)*/
+.top-menu li {
+    float: left;
+    text-align: center;
+}
+
+.top-menu li a {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #fff;
+    display: block;
+    padding: 17px 20px;
+    /*글씨의 자동 높이때문에 높이만 2~3px줄이기*/
+    border: 0px solid red;
+    position: relative;
+}
+
+.top-menu li a::before {
+    content: "";
+    width: 1px;
+    height: 10px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: -2px;
+    transform: translateY(-50%);
+}
+
+.top-menu li.on {
+    background-color: white;
+    padding: 0 2px;
+}
+
+.top-menu li.on a {
+    color: #243c84;
+}
+
+/* top-menu (sns,search) */
+
+.top-menu-right {
+    display: flex;
+}
+
+.top-sns {
+ 
+    display: flex;
+    margin-top: 14px;
+    
+}
+
+.top-sns>li {
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    margin: 0 5px 0 0;
+   
+}
+
+.top-sns>li:nth-child(1) {
+    background: url("../img/top_sns01.png")no-repeat;
+    background-size: cover;
+
+}
+
+.top-sns>li:nth-child(2) {
+    background: url("../img/top_sns02.png")no-repeat;
+    background-size: cover;
+
+}
+
+.top-sns>li:nth-child(3) {
+    background: url("../img/top_sns03.png")no-repeat;
+    background-size: cover;
+
+}
+
+.top-sns>li:nth-child(4) {
+    background: url("../img/top_sns04.png")no-repeat;
+    background-size: cover;
+
+}
+
+.top-search {
+    position: relative;
+    margin: 10px 30px 0 15px;
+}
+
+.top-search input {
+    height: 30px;
+    width: 162px;
+}
+
+.top-search span {
+    background: url("../img/icon_search.gif") no-repeat;
+    width: 15px;
+    height: 15px;
+    /* display: block; */
+    position: absolute;
+    right: 12px;
+    top: 7px;
+    cursor: pointer;
+
+}
+
+/* top-logo */
+.top-logo {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.top-logo img {
+    height: 20px;
+    width: auto;
+}
+
+/* gnb */
+.gnb-nav {
+    width: 100%;
+
+    position: relative;
+    z-index: 999;
+}
+
+.gnb-nav::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0px;
+    background-color: #fff;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    z-index: -1;
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.gnb-nav:hover::after {
+    height: 250px;
+    opacity: 1;
+    border-bottom: 2px solid black;
+
+}
+
+
+
+.gnb-main {
+
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    margin-left: -520px;
+  
+}
+
+.gnb-main>li {
+    float: left;
+   
+
+  
+}
+
+.gnb-main>li>a {
+    text-align: center;
+
+    font-size: 1rem;
+    display: block;
+    color: #202023;
+    padding: 0 41px;
+
+    position: relative;
+
+ 
+
+}
+
+.gnb-main>li>a>span::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 4px;
+    background-color: #000;
+    margin: 3px auto;
+    transition: 0.5s;
+
+ 
+}
+
+.gnb-main>li:hover>a>.span3::after {
+    width: 80%;
+}
+.gnb-main>li:hover>a>span::after {
+    width: 100%;
+}
+
+.gnb-sub {
+    padding-left: 40px;
+    margin-top: 20px;
+    opacity: 0;
+    transition: 0.1s;
+    display: none;
+    position: absolute;
+
+}
+.gnb-sub>li{
+
+
+}
+
+.gnb-nav:hover .gnb-sub {
+    opacity: 1;
+    display: block;
+
+}
+.sub3{
+    padding-left: 45px;
+}
+
+.gnb-sub>li>a {
+    font-size: 13px;
+    color: #848484;
+    line-height: 1.75rem;
+   
+}
+
+.gnb-sub>li>a:hover {
+    color: #000;
+}
+
+/* slide-menu */
+.nav-btn {
+    display: none;
+}
+
+.gnb {
+    display: none;
+}
+
+/* main */
+
+main {
+    max-width: 100%;
+    height: 100%;
+    background: url('../img/login_bg.jpg')no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+}
+
+.main-1 {
+    width: 100%;
+    height: 1180px;
+    padding-top: 122px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.innger {
+    margin: 0 auto;
+    width: 980px;
+    height: 900px;
+
+
+    background-color: #fff;
+
+
+}
+
+.container>h2 {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 52px;
+    padding-top: 98px;
+    margin-bottom: 63px;
+    border-bottom: 8px solid #233e83;
+    width: 810px;
+    margin: 0 90px;
+    color: #233e83;
+}
+
+.input {
+
+    margin-top: 63px;
+}
+
+.ps-input {
+    text-align: center;
+
+}
+
+.ps-input>input {
+    width: 810px;
+    height: 67px;
+    margin-bottom: 16px;
+    border: 2px solid #8590aa;
+    border-radius: 5px;
+
+}
+
+.ps-input>input::placeholder {
+    color: #8590aa;
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 10px;
+
+}
+
+.login-input {
+    /* margin-top: 37px; */
+    font-size: 16px;
+    margin-left: 84px;
+    width: 810px;
+    color: #8590aa;
+    margin-top: 34px;
+    padding-bottom: 30px;
+
+}
+
+.login-input>div:first-child>label {
+    position: relative;
+}
+
+.login-input>div:first-child>label>input {
+    position: absolute;
+    top: 1.5px;
+
+}
+
+.login-input>div>label {
+
+    width: 10px;
+    height: 10px;
+    position: relative;
+}
+
+.login-input div input {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top:4px;
+}
+
+.login-input>div>label>span {
+
+    padding-left: 30px;
+
+}
+
+.login-input div label input {
+    border: 1px solid #8590aa;
+}
+
+.login-input>div {
+    display: inline-block;
+    font-size: 17px;
+
+}
+
+.login-input>div:nth-child(2) {
+    float: right;
+}
+
+.wrap-login {
+
+    padding-top: 50px;
+    padding: 50px 0px 64px 85px;
+
+}
+
+.wrap-login a>button {
+    width: 393px;
+    height: 82px;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 900;
+    ;
+
+}
+
+.wrap-login a:nth-child(1)>button {
+    margin-right: 8px;
+    background-color: #233e83;
+    color: #fff;
+    transition: 0.9s;
+
+}
+
+.wrap-login a:nth-child(1)>button:hover {
+    background-color: #fff;
+    color: #233e83;
+    border: 5px solid #233e83;
+
+}
+
+.wrap-login a:nth-child(2)>button {
+    margin-left: 8px;
+    border: 2px solid #233e83;
+    color: #233e83;
+}
+
+.wrap-login a:nth-child(2)>button:hover {
+    background-color: #233e83;
+    color: #fff;
+}
+
+.sns {
+    color: #233e83;
+    text-align: center;
+    font-size: 23px;
+    font-weight: 800;
+
+}
+
+.sns>p {
+    padding-bottom: 42px;
+}
+
+.sns div img {
+    max-width: 94px;
+    height: 94px;
+    margin: 0 42px 0 42px;
+}
+
+/* footer top */
+footer {
+    background-color: #262626;
+}
+
+.footer-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    /* position: relative; */
+}
+
+footer>div:nth-child(1) {
+    border-bottom: 1px solid #464646;
+}
+
+.footer-top>ul>li {
+    display: inline-block;
+    margin: 3px -10px 0 75px;
+    color: #818181;
+}
+
+.footer-top>ul>li:nth-child(2) a {
+    color: #fff;
+    font-weight: 400;
+}
+
+.footer-lang {
+    float: right;
+    margin-top: -25px;
+}
+
+.footer-lang>select {
+    width: 168px;
+    height: 28px;
+    padding-left: 20px;
+    color: #848484;
+    line-height: 28px;
+}
+
+/* footer bottom */
+.footer-bottom {
+    max-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    margin: 41px 0 24px 500px;
+}
+
+.footer-info {
+    width: 90%;
+    max-width: 650px;
+    margin: 0 auto;
+    margin-bottom: 14px;
+    font-size: 0.75rem;
+    line-height: 1.3rem;
+    color: #6c6c6c;
+}
+
+.footer-info>span {
+    background: url('../img/footer_line.gif')no-repeat;
+    background-position: right;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.footer-info>span:nth-child(3) {
+    margin-left: 50px;
+}
+
+.footer-copy {
+    padding-bottom: 35px;
+    font-size: 0.75rem;
+    color: #6c6c6c;
+    margin-left: 400px;
+}
+
+.footer-ccm {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+/* tablet */
+@media screen and (max-width:1180px) and (min-width:641px) {
+
+    main {
+        max-width: 100%;
+        height: 100%;
+    }
+
+    .main-1 {
+        width: 100%;
+        height: 1180px;
+    }
+
+    .innger {
+        width: 800px;
+        height: 720px;
+    }
+
+    .container>h2 {
+        text-align: center;
+        width: 85%;
+        margin: 0px auto;
+        padding-top: 45px;
+    }
+
+    .input {
+        margin-top: 50px;
+    }
+
+    .ps-input>input {
+        width: 85%;
+        height: 67px;
+        margin-bottom: 16px;
+        border: 2px solid #8590aa;
+        border-radius: 5px;
+
+    }
+
+    .login-input {
+        display: block;
+        margin-top: 20px;
+        font-size: 16px;
+        margin-left: 62px;
+        width: 85%;
+        color: #8590aa;
+        margin-right: 0;
+        padding-bottom: 30px;
+
+    }
+
+    .wrap-login {
+
+        padding-top: 50px;
+        padding: 25px 0px 64px 70px;
+
+    }
+
+    .wrap-login a>button {
+        width: 324px;
+        height: 82px;
+        font-size: 22px;
+        text-align: center;
+        font-weight: 900;
+        ;
+
+    }
+
+    .sns {
+        color: #233e83;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 800;
+
+    }
+
+    .sns>p {
+        padding-bottom: 22px;
+    }
+
+    .sns div img {
+        max-width: 60px;
+        height: 60px;
+        margin: 0 42px 0 42px;
+    }
+
+    /* top-menu */
+    .top-nav {
+        height: 30px;
+    }
+
+    .top-menu-right {
+        display: none;
+    }
+
+    .top-menu {
+        width: 100%;
+    }
+
+    .top-menu li {
+        width: 33.333333%;
+    }
+
+    .top-menu li a {
+        padding: 7px 0;
+    }
+
+    header {
+        height: 90px;
+    }
+
+    .top-logo {
+        top: 50px;
+        left: 10px;
+        transform: translateX(0%);
+    }
+
+    .gnb-nav {
+        display: none;
+    }
+
+    .nav-btn {
+        display: block;
+        position: relative;
+    }
+
+    .nav-btn>span {
+        background: url("https://www.ediya.com/images/common/m_nav_btn.gif");
+        width: 26px;
+        height: 22px;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        cursor: pointer;
+    }
+
+    .top-fixed {
+        height: 60px;
+    }
+
+    .top-fixed .top-logo {
+        top: 20px;
+    }
+
+    /* header gnb 부분 */
+    .gnb {
+        width: 100%;
+        height: 950px;
+        position: fixed;
+        /* display: none; */
+        display: none;
+        position: relative;
+    }
+
+    .gnb::after {
+        content: '';
+        display: block;
+        background-color: #000;
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+        z-index: 49;
+        position: relative;
+    }
+
+    .gnb-wrap {
+        position: absolute;
+        right: 0;
+        width: 85%;
+        height: 100%;
+        background-color: #1d326c;
+        z-index: 55;
+    }
+
+    .top-wrap {
+        display: inline-block;
+        width: 100%;
+        margin: 14px 0;
+    }
+
+    .top-members {
+        float: left;
+    }
+
+    .top-members>li {
+        float: left;
+        margin-left: 12px;
+        padding-left: 13px;
+        background: url("https://ediya.com/images/common/util_line_m.gif")no-repeat left;
+
+    }
+
+    .top-members li:first-child {
+        background: none;
+    }
+
+    .top-members li a {
+        font-size: 14px;
+        color: #8e99b6;
+    }
+
+    .top-sns {
+        float: right;
+        margin-right: 15px;
+    }
+
+    .top-sns li {
+        float: left;
+        margin-left: 5px;
+    }
+
+    .gnb-body {
+        width: 100%;
+        float: left;
+        border-top: solid 1px #192d65;
+        border-bottom: solid 1px #2e437c;
+    }
+
+    .gnb-body>li {
+        background: url("https://ediya.com/images/common/m_nav_arrow.gif") no-repeat right 20px;
+
+    }
+
+    .gnb-body li a {
+        display: block;
+        border-top: solid 1px #192d65;
+        border-bottom: solid 1px #2e437c;
+        padding-left: 25px;
+        color: #FFF;
+        font-size: 16px;
+        height: 48px;
+        line-height: 48px;
+    }
+
+    .sub {
+        display: none;
+    }
+
+    .sub>li {
+        background: #2a4181;
+        border: none;
+    }
+
+    .sub>li>a {
+        border-top: solid 1px #344a86;
+        border-bottom: solid 1px #203570;
+    }
+
+    .find-store {
+        width: 100%;
+        text-align: right;
+        float: left;
+        height: 50px;
+        background: #192d65;
+        border-bottom: solid 1px #2e437c;
+        line-height: 50px;
+    }
+
+    .find-store li a {
+        font-size: 14px;
+        color: #fff;
+        padding: 0 15px;
+    }
+
+    .find-store li a span {
+        background: url("https://ediya.com/images/common/m_store_btn.png") no-repeat right 0;
+        background-size: 13px;
+
+        padding-right: 20px;
+    }
+
+    .search_m {
+        float: right;
+        width: 160px;
+        height: 30px;
+        margin: 30px 30px 0 0;
+        position: relative;
+
+        background-color: #fff;
+    }
+
+    .search_m input {
+        position: absolute;
+        left: 0px;
+        width: 120px;
+        height: 30px;
+        border: none;
+    }
+
+    .search_m a {
+        background: url("https://ediya.com/images/common/icon_search.gif")no-repeat center center;
+        width: 38px;
+        height: 30px;
+        display: block;
+        position: absolute;
+        right: 0;
+        line-height: 20px;
+
+    }
+
+    .gnb-close {
+        position: absolute;
+        top: 0;
+        left: 10%;
+        width: 38px;
+        height: 30px;
+        z-index: 50;
+
+
+    }
+
+    /* footer-top */
+    footer {
+        position: relative;
+        text-align: center;
+
+    }
+
+    .footer-lang {
+        position: absolute;
+        top: 58%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* footer-bottom */
+
+    .footer-bottom {
+        padding-top: 110px;
+        border: 0px solid blue;
+        position: relative;
+    }
+
+    .footer-logo {
+        border: 0px solid red;
+        margin: 20px 0;
+        text-align: center;
+        padding-top: 80px;
+
+    }
+
+    .footer-ccm {
+        border: 0px solid red;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+
+
+    }
+
+    .footer-copy {
+        text-align: center;
+        border: 0px solid red;
+        margin: 0 0;
+    }
+
+    .footer-top>ul>li {
+        margin: 1px 20px;
+        line-height: 1.5rem;
+        border: 0px solid red;
+    }
+
+
+
+}
+
+/* mobile */
+@media screen and (max-width:640px) {
+
+
+    main {
+        max-width: 100%;
+        height: 100%;
+    }
+
+    .main-1 {
+        width: 100%;
+        height: 800px;
+    }
+
+    .innger {
+        width: 90%;
+        height: 90%;
+    }
+
+    .container>h2 {
+        text-align: center;
+        width: 85%;
+        margin: 0px auto;
+        padding-top: 45px;
+        padding-bottom: 40px;
+        font-size: 35px;
+        border-bottom:2.5px solid #233e83
+    }
+
+    .input {
+        margin-top: 40px;
+    }
+
+    .ps-input>input {
+        width: 85%;
+        height: 60px;
+        margin-bottom: 16px;
+        border: 2px solid #8590aa;
+        border-radius: 5px;
+
+    }
+    .ps-input>input::placeholder {
+        font-size: 12px;
+    }
+
+    .login-input {
+        display: block;
+        margin-top: 20px;
+        font-size: 14px;
+        margin: 0 auto;
+
+        width: 85%;
+        color: #8590aa;
+        padding-bottom: 30px;
+       
+        
+        
+       
+
+    }
+    .login-input div{
+        font-size: 16px;
+    }
+   
+    .login-input span{
+        font-size: 15px;
+    }
+    .login-input a{
+        font-size: 15px;
+    }
+    .wrap-login {
+   
+        margin: 0 auto;
+        margin-bottom: 10px;
+        padding: 0;
+        /* margin-left:26px;  */
+        /* padding: 0px 0px 30px 25px; */
+        width: 85%;
+    }
+
+    .wrap-login a>button {
+        width: 47.5%;
+        height: 40%;
+        font-size: 11px;
+        text-align: center;
+        font-weight: 900;
+        margin: 0;
+      
+   
+
+    }
+    .wrap-login a:nth-child(2)>button {
+        margin-left: 0px;
+ 
+    }
+    
+    .sns {
+        color: #233e83;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 800;
+        cursor: pointer;
+
+    }
+
+    .sns>p {
+        padding-bottom: 22px;
+    }
+
+    .sns div img {
+    
+        height: 40px;
+        margin: 0px 10px;
+    }
+
+    /* header gnb 부분 */
+    .gnb {
+        width: 100%;
+        height: 950px;
+
+        /* display: none; */
+        display: none;
+        position: relative;
+    }
+
+    .gnb::after {
+        position: relative;
+        content: '';
+        display: block;
+        background-color: #000;
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+        z-index: 49;
+    }
+
+    .gnb-wrap {
+        position: absolute;
+        right: 0;
+        width: 85%;
+        height: 100%;
+        background-color: #1d326c;
+        z-index: 50;
+    }
+
+    .top-wrap {
+        display: inline-block;
+        width: 100%;
+        margin: 14px 0;
+    }
+
+    .top-members {
+        float: left;
+    }
+
+    .top-members>li {
+        float: left;
+        margin-left: 12px;
+        padding-left: 13px;
+        background: url("https://ediya.com/images/common/util_line_m.gif")no-repeat left;
+
+    }
+
+    .top-members li:first-child {
+        background: none;
+    }
+
+    .top-members li a {
+        font-size: 14px;
+        color: #8e99b6;
+    }
+
+    .top-sns {
+        float: right;
+        margin-right: 15px;
+    }
+
+    .top-sns li {
+        float: left;
+        margin-left: 5px;
+    }
+
+    .gnb-body {
+        width: 100%;
+        float: left;
+        border-top: solid 1px #192d65;
+        border-bottom: solid 1px #2e437c;
+    }
+
+    .gnb-body>li {
+        background: url("https://ediya.com/images/common/m_nav_arrow.gif") no-repeat right 20px;
+
+    }
+
+    .gnb-body li a {
+        display: block;
+        border-top: solid 1px #192d65;
+        border-bottom: solid 1px #2e437c;
+        padding-left: 25px;
+        color: #FFF;
+        font-size: 16px;
+        height: 48px;
+        line-height: 48px;
+    }
+
+    .sub {
+        display: none;
+    }
+
+    .sub>li {
+        background: #2a4181;
+        border: none;
+    }
+
+    .sub>li>a {
+        border-top: solid 1px #344a86;
+        border-bottom: solid 1px #203570;
+    }
+
+    .find-store {
+        width: 100%;
+        text-align: right;
+        float: left;
+        height: 50px;
+        background: #192d65;
+        border-bottom: solid 1px #2e437c;
+        line-height: 50px;
+    }
+
+    .find-store li a {
+        font-size: 14px;
+        color: #fff;
+        padding: 0 15px;
+    }
+
+    .find-store li a span {
+        background: url("https://ediya.com/images/common/m_store_btn.png") no-repeat right 0;
+        background-size: 13px;
+
+        padding-right: 20px;
+    }
+
+    .search_m {
+        float: right;
+        width: 160px;
+        height: 30px;
+        margin: 30px 30px 0 0;
+        position: relative;
+
+        background-color: #fff;
+    }
+
+    .search_m input {
+        position: absolute;
+        left: 0px;
+        width: 120px;
+        height: 30px;
+        border: none;
+    }
+
+    .search_m a {
+        background: url("https://ediya.com/images/common/icon_search.gif")no-repeat center center;
+        width: 38px;
+        height: 30px;
+        display: block;
+        position: absolute;
+        right: 0;
+        line-height: 20px;
+
+    }
+
+    .gnb-close {
+        position: absolute;
+        top: 0;
+        left: 10%;
+        width: 38px;
+        height: 30px;
+        z-index: 50;
+
+
+    }
+
+    /* top-menu */
+    .top-menu-right {
+        display: none;
+    }
+
+    .top-nav {
+        height: 30px;
+    }
+
+    .top-menu-right {
+        display: none;
+    }
+
+    .top-menu {
+        width: 100%;
+    }
+
+    .top-menu li {
+        width: 33.333333%;
+    }
+
+    .top-menu li a {
+        padding: 7px 0;
+    }
+
+    header {
+        height: 90px;
+    }
+
+    .top-logo {
+        top: 50px;
+        left: 10px;
+        transform: translateX(0%);
+    }
+
+    .gnb-nav {
+        display: none;
+    }
+
+    .nav-btn {
+        display: block;
+        position: relative;
+    }
+
+    .nav-btn>span {
+        background: url("	https://www.ediya.com/images/common/m_nav_btn.gif");
+        width: 26px;
+        height: 22px;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        cursor: pointer;
+    }
+
+    .top-fixed {
+        height: 60px;
+    }
+
+    .top-fixed .top-logo {
+        top: 20px;
+    }
+
+    /* footer-top */
+    footer {
+        position: relative;
+        text-align: center;
+
+    }
+
+    .footer-lang {
+        position: absolute;
+        top: 58%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* footer-bottom */
+
+    .footer-bottom {
+        padding-top: 110px;
+        border: 0px solid blue;
+        position: relative;
+    }
+
+    .footer-info>span {
+        text-align: center;
+    }
+
+    .footer-logo {
+        border: 0px solid red;
+        margin: 20px 0;
+        text-align: center;
+        padding-top: 80px;
+
+    }
+
+    .footer-ccm {
+        border: 0px solid red;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .footer-copy {
+        text-align: center;
+        border: 0px solid red;
+        margin: 0 0;
+    }
+
+    .footer-info>span {
+        border: 0px solid red;
+
+    }
+
+    .footer-top>ul>li {
+        margin: 1px 20px;
+        line-height: 1.5rem;
+        border: 0px solid red;
+    }
+
+
+
+
+}

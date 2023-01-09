@@ -1,0 +1,93 @@
+Common = {
+	EmailCheck: function(email) {
+		var regex=/([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+		return (email != '' && email != 'undefined' && regex.test(email));
+	},
+
+	Search: function(){
+		if(!$("#keyword").val()){
+			$("#keyword").attr("placeholder", "검색어를 입력하세요.").focus();
+			return false;
+		} else return true;
+	},
+
+	Down: function(code, attach, origin) {
+		location.href="/common/download.php?code="+code+"&attach="+attach+"&origin="+origin;
+	},
+
+	Zipcode: function(){
+		new daum.Postcode({
+			oncomplete: function(data) {
+				var addr = data.address;
+				if(data.buildingName) addr += ' ('+data.buildingName+')';
+				$("#zipcode").val(data.zonecode);
+				$("#addr1").val(addr);
+				$("#addr2").focus();
+			}
+		}).open();
+	},
+
+	BZipcode: function(){
+		new daum.Postcode({
+			oncomplete: function(data) {
+				var addr = data.address;
+				if(data.buildingName) addr += ' ('+data.buildingName+')';
+				$("#bzipcode").val(data.zonecode);
+				$("#baddr1").val(addr);
+				$("#baddr2").focus();
+			}
+		}).open();
+	}
+}
+
+Pager = {
+	Load: function(target, pgid, pgblock){
+		var $target = $("#page"+target);
+		var page = ($target.attr("page"+target))? Number($target.attr("page"+target)): 1;
+		var count = ($target.attr("count"+target))? Number($target.attr("count"+target)): 1;
+		var path = $target.attr("path"+target);
+		var numblock = Number(pgblock);
+
+		var nval = Math.ceil(page/numblock);
+		var pgstart = (nval-1)*numblock+1;
+		var pgend = pgstart+numblock-1;
+
+		if(count < pgend) pgend = count;
+
+		var pgprev = (pgstart != 1)? pgstart-numblock:  1;
+		var pgnext = (pgend+1 > count)? count: pgend+1;
+
+		if($target.find("a").hasClass("f")){
+			if(page>1) $target.find("a.f").attr("href", "javascript:Pager.Move('1');");
+		}
+
+		if($target.find("a").hasClass("p")){
+			if(page>1) $target.find("a.p").attr("href", "javascript:Pager.Move('"+pgprev+"');");
+		}
+
+		var num=0;
+		$target.find("div.page").empty().append('<a href="#self" class="on">1</a>');
+
+		for(i=pgstart; i<=pgend; i++){
+			if(i<pgend) $target.find("a.on:eq(0)").clone().appendTo($target.find("div.page"));
+			$target.find("a.on:eq("+num+")").attr("href", "javascript:Pager.Move('"+i+"');").text(i);
+			num++;
+		}
+
+		$target.find("a.on").each(function(){
+			if(page==Number($(this).text())) $(this).siblings().removeClass("on");
+		});
+
+		if($target.find("a").hasClass("n")){
+			if(page>0 && count > 0 && page != count) $target.find("a.n").attr("href", "javascript:Pager.Move('"+pgnext+"');");
+		}
+
+		if($target.find("a").hasClass("l")){
+			if(count > 0 && page != count) $target.find("a.l").attr("href", "javascript:Pager.Move('"+count+"');");
+		}
+	},
+
+	Move: function(pg){
+		Data.Load(pg);
+	}
+}

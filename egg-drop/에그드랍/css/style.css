@@ -1,0 +1,1135 @@
+@charset "utf-8";
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&display=swap');
+/*font-family: 'Nanum Gothic', sans-serif;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* font-family: 'Noto Sans KR', sans-serif; */
+@font-face{
+    font-family: 'AppleSDGothicNeo';
+    src: url("../font/AppleSDGothicNeoB.woff") format("woff");
+    font-weight: 900;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    
+    letter-spacing: 0.1px;
+
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: block;
+    line-height: 0;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 5rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+}
+
+h5 {
+    font-size: 0.7rem;
+    line-height: 0.7rem;
+}
+
+button {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: crimson;
+    color: white;
+}
+/* 팝업 */
+.pop-up{
+    position: absolute;
+    top: 10%;
+    right: 50px;
+    z-index: 999;
+    background-color: #fff;
+    cursor: pointer;
+    z-index: 999;
+}
+.pop-up-text{
+    display: flex;
+    height: 50px;
+    background-color: #fff;
+    font-size: 18px;
+    justify-content: space-around;
+    padding: 15px;
+   
+}
+.pop-up-r{
+    position: relative;
+}
+.pop-up-r::before{
+    position: absolute;
+    left: -40px;
+    top: -5px;
+    content: '';
+    display: block;
+    width: 2px;
+    height: 30px;
+    background-color: black;
+   
+}
+.scroll-popup{
+    position: fixed;
+    top: 70%;
+    right: 100px;
+    z-index: 900;
+}
+.site-top{
+   
+    position: absolute;
+    margin-top: 20px;
+    right: 8px;
+
+}
+.site-top a{
+    text-align: center;
+    display: block;
+    width: 30px;
+    padding-top: 25px;
+    background: url('https://eggdrop.co.kr/assets/images/common/icon_top.svg') no-repeat 50% 5px;
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    /* position: fixed;
+    cursor:  pointer;
+    bottom: 40px;
+ 
+    right: 400px; */
+}
+
+/* .pop-first{
+    position: absolute;
+    top: 70%;
+    right: 100px;
+    z-index: 999;
+} */
+.pop-img img{
+  display: block;
+}
+/* header */
+
+header{
+ 
+    height: 87px;
+    width: 100%;
+    position: relative;
+    font-family: 'AppleSDGothicNeo', 'Noto Sans KR', sans-serif;
+}
+/* header::after{
+    display: block;
+    clear: both;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 88px;
+    background: #fff;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+    content: "";
+} */
+/* header::before{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    background-color: #fff;
+    z-index: 999;
+  
+} */
+.container{
+    width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    /* position: relative; */
+    z-index: 999;
+    /* padding-left: 300px; */
+ 
+    
+}
+.container>h1>a{
+
+    line-height: 90px;
+}
+.box{
+    font-weight: 700;
+    line-height: 1.38889;
+    letter-spacing: -0.015rem;
+
+   
+
+}
+
+.container>nav::after{
+    width: 100%;
+    position: absolute;
+    background-color: #fff;
+    height: 0;
+    top: 87px;
+    left: 0;
+    content: '';
+    transition: height 0.4s ease;
+    z-index: 8;
+    clear: both;
+    z-index: 80;
+   
+}
+
+.container>nav:hover::after{
+    height: 250px;
+    width: 100%;
+}
+
+nav:hover .sub{
+    display: block;
+    opacity: 1;
+    z-index: 998;
+    position: absolute;
+}
+
+.box>ul{
+    font-size: 0;
+    
+}
+
+.box>ul>li{
+    float: left;
+    font-size: 22px;
+    font-weight: 700;
+    vertical-align: top;
+    margin: 30px 0 35px 0;   
+    width: 170px;
+    cursor: pointer;
+}
+
+.container>h1{
+    font-size: 2.1rem;
+    color: #000;
+    border: 0px solid red;
+    margin-right: 60px;
+}
+.box>ul>li:nth-child(5){
+    padding-right: 0;
+    border: 0px solid red;
+}
+.box>ul>li:nth-child(5)>a{
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+    width: 108px;
+    height: 44px;
+    background-color: #000;
+    border-radius: 16.5px;
+    color: #fff;
+}
+
+.lange{
+ position: fixed;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+right: -60px;
+    
+  }
+/* .box>ul>li>a{
+    position: relative;
+    border: px solid black;
+} */
+.box>ul>li>a{
+    position: relative;
+   
+}
+.box>ul>li>a::after{
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 3px;
+    background: red;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.6s;
+    
+}
+.box>ul>li>a:hover::after{
+    opacity: 1;
+}
+
+.box>ul>li:nth-child(5)>a:hover::after{
+    opacity: 0;
+    
+}
+.box>ul>li:nth-child(5)>a:hover {
+    background-color: red;
+    color: #fff;
+}
+.box>ul>li>a:hover{
+    color: red;
+}
+.sub>li:hover{
+    color: red;
+    cursor: pointer;
+}
+
+
+/* sub-menu */
+
+.sub{  
+
+    margin-top: 50px;
+    padding: 0;
+    z-index: 999;
+    display: none;
+    opacity: 0;
+    z-index: 999;
+    transition: top 0.1s ease, opacity 0.1s ease;
+    opacity: 0;
+
+}
+
+.sub>li{
+    z-index: 999;
+    width: 100%;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 10px;
+    line-height: 1.38889;
+}
+
+
+
+/* main */
+
+main{
+    max-width: 1920px;
+    margin: 0 auto;
+    height: 990px;
+    position: relative;
+}
+
+.main-slide{
+    overflow: hidden;
+    width: 100%;
+    height:990px;
+}
+.img-panel{
+    width: 600%;
+}
+.img-panel>li{
+    float: left;
+    width: 16.66666%;
+
+}
+
+.img-panel>li>img{
+    object-fit: cover;
+    height: 990px;
+    width: 100%;
+}
+
+.main-indi{
+    position: absolute;
+    bottom: -10px;
+    left: 338px;
+    transition: 0.5s;
+}
+.main-indi>.main-indi-on{
+    background-color: #000;
+}
+.main-indi>li{
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #aaa;
+    margin: 0 10px;
+    float: left;
+    cursor: pointer;
+}
+.scroll a{
+    
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    padding-bottom: 20px;
+    background: url('https://eggdrop.co.kr/assets/images/common/icon_bottom.svg') no-repeat bottom/25px auto ;
+    font-weight: 500;
+    color: #000;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+/* section1 */
+
+.section-1{
+    width: 100%;
+    margin-top: 100px;
+    position: relative;
+    height: 950px;
+
+}
+.section-1>div:first-child{
+
+
+}
+.section-1 h3{
+    text-align: center;
+    font-weight: 500;
+    font-size: 50px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s;
+}
+
+.navi{
+    margin: 0 auto;
+    width: 960px;
+    margin-top: 40px;
+    padding: 40px 0 60px;
+    position: absolute;
+    margin-bottom: 20px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s;
+
+}
+.navi>ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.navi>ul>li{
+    font-weight: 500;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.navi>ul>li:hover{
+    color: red;
+}
+
+/* section1-slide */
+.section-1{
+
+    margin-top: 100px;
+    overflow: hidden;
+}
+.section1-slide{
+    margin-top: 200px;
+    width: 6300px;
+
+}
+.section-1>div:first-child{
+    padding-top: 20px;
+}
+.section1-slide-cont{
+    width: 6300px;
+    height: 700px;
+    overflow: hidden;
+}
+
+.section1-slide-cont>div{
+    width: 408px;
+    height: 594px;
+    margin: 0 7px;
+    margin-top: 100px;
+    text-align: center;   
+    overflow: hidden;
+    float: left;
+    
+}
+
+figure{
+    position: relative;
+    
+}
+figcaption{
+    text-align: center;
+    padding-top: 40px; 
+}
+
+.sect1-text{
+    position: absolute;
+    top: 66px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 0px solid red;
+
+}
+
+.sect1-img{
+    position: absolute;
+    top: 450px;
+    left: -50px;
+    transition: 0.5s;
+
+}
+.mini img{
+    position: absolute;
+    top: 320px;
+    width: 80px;
+    right: 5px;
+    height: 80px;
+    display: none;
+    transition: 0.9s;
+}
+.section1-slide-cont>div:hover .mini img{
+    display: block;
+    transform: translateY(-50px);
+ 
+}
+
+.sect1-text img, .sect1-img img{
+    transition: 0.5s;
+}
+.section1-slide-cont>div:hover .sect1-img img{
+    transform: translateY(-150px);
+ 
+}
+.section1-slide-cont>div:hover{
+    margin-top: 0px;
+    transition: 0.5s;
+}
+
+
+/*section2  */
+.section-2{
+    width: 100%;
+    height: 900px;
+    margin-top: 40px;
+    background-color: #f0ffaa;
+    overflow: hidden;
+}
+
+.section2-cont>h1{
+    text-align: center;
+    padding-top: 82px;
+    padding-bottom: 84px;
+    font-size: 50px;
+    
+}
+
+.section2-cont{
+    margin: 0 auto;
+    width: 1147px;
+    height: 900px;
+    position: relative;
+   
+    
+}
+.section2-cont>:nth-child(2){
+    margin-left: 80px;
+    
+}
+.section2-cont>:nth-child(2)>img{
+   
+    margin-bottom: 10px;
+
+}
+.section2-cont>div>h2{
+    padding: 0;
+    font-size: 18px;
+    color: #000;
+    font-weight: 900;
+    
+}
+.section2-cont>div>h3{
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.38889rem;
+    letter-spacing: -0.015rem;
+    word-wrap: break-word;
+    margin-bottom : 46px;
+}
+.section2-cont>div>button{
+    width: 234px;
+    height: 60px;
+    border-radius: 30px;
+    border: 2px solid black;
+    background-color: transparent;
+    color: #000;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: left;
+   background: url('../image/section2/icon_arrow_right.svg')no-repeat;
+   background-size: 35px;
+    background-position: right 30px center;
+}
+
+.section2-cont>div>button:hover{
+  
+    color: #fff;
+    background: url('../image/section2/icon_arrow_right_white.svg')no-repeat;
+    background-size: 35px;
+    background-position: right 30px center;
+    width: 234px;
+    height: 60px;
+
+}
+.section2-cont>div>button:hover{
+    background-color: red !important;
+}
+.sect2-cont-img{
+    width: 200px;
+    position: absolute;
+    right: 41%;
+    top: 230px;
+    z-index: 1;
+  
+ 
+}
+.sect2-cont-img2{
+    position: absolute;
+    top: 0;
+    right: -300px;
+}
+
+.sect2-cont-img2>img{
+    width: 447px;
+    height: 447px;
+    background-repeat: no-repeat;
+    animation:  rotate 70s linear infinite;
+}
+@keyframes rotate{
+    100%{transform: rotate(3600deg);}
+}
+
+/* section3 */
+
+
+/* section3-top */
+.section-3{
+    width: 100%;
+    height: 1523px;
+    position: relative;
+    overflow: hidden;
+}
+.sect3-top{
+    width: 720px;
+    height: 650px;
+    margin: 0 auto;
+
+}
+.section-3>.sect3-top>header{
+    text-align: center;
+}
+
+.section-3>.sect3-top>header>h3{
+    font-size: 50px;
+    font-weight: 500;
+    margin-top: 132px;
+}
+.section-3>.sect3-top>header>p{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 67px
+}
+.sect3-cont-1{
+    border: 0px solid red;
+    position: relative;
+    padding-right: 240px;
+    margin-top: 68px;
+}
+.bar{
+    border: 0px solid red;
+    background: url('https://eggdrop.co.kr/assets/images/main/icon_store.png')no-repeat;
+    background-position: 0 0;
+    background-size: 44px auto;
+    padding: 42px 0 4px 54px;
+    box-sizing: border-box;
+    position: relative;
+}
+.bar>p{
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 7px;
+}
+.bar>div{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    height: 2px;
+    width: 0%;
+    transition: 0.5s;
+}
+.sect3-cont-1>a{
+    position: absolute;
+    right: 0;
+    top: 15px;
+    
+}
+.sect3-cont-1>a>button{
+    width: 230px;
+    height: 60px;
+    border-radius: 30px;
+    border: 2px solid #000;
+    font-weight: 700;
+    font-size: 18px;
+
+    text-align: left;
+    
+}
+.sect3-cont-1>a>button{
+    background: url("../image/section2/icon_arrow_right.svg") no-repeat;
+    background-position: right 30px center;
+    background-size: 35px;
+    display: block;
+    z-index: 50;
+    position: relative;
+ 
+    
+}
+.sect3-cont-1>a>button:hover{
+    background: url('../image/section2/icon_arrow_right_white.svg') no-repeat;
+    background-size: 35px;
+    background-position: right 30px center;
+}
+
+.sect3-cont-1>a>button:hover{
+    background-color: red;
+  
+}
+.sect3-cont-1>p{
+    background: url('https://eggdrop.co.kr/assets/images/main/icon_store_current.jpg')no-repeat;
+    height: 28px;
+    color: #989898;
+    font-weight: 600;
+    line-height: 28px;
+    padding-left: 36px;
+    margin-top: 5px;
+}
+
+.text-app{
+    margin-bottom: 20px;
+}
+
+.sect3-cont2{
+    margin: 65px 0 0 0;
+}
+
+.sect3-cont2>div:first-child{
+    float: left;;
+    width: 50%;
+    /* display: none; */
+    transition: 0.5s;
+}
+.sect3-cont2>div:last-child{
+    /* display: none; */
+    transition: 0.5s;
+}
+
+.sect3-cont2>div:first-child>dt,
+.sect3-cont2>div:last-child>dt{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.38889;
+    letter-spacing: -0.015em
+}
+.sect3-cont2>div:first-child>dd,
+.sect3-cont2>div:last-child>dd{
+    font-weight: 500;
+    line-height: 1.38889;
+    letter-spacing: -0.015em;
+    font-size: 18px;
+
+    
+}
+
+.sect3-cont2>div:last-child>dd{
+    margin-top: 20px;
+}
+/* section3-bottom */
+.sect3-bottom{
+    width: 1920px;
+    height: 820px;
+    margin: 0 auto;
+ 
+    position: relative;
+ 
+}
+
+.sect3-bottom>header{
+    max-width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    z-index: 99;
+
+  
+}
+.sect3-bottom>header>img{
+    padding-top: 50px;
+    transition: 0.5s;
+}
+
+.sect3-bottom>img{
+    position: absolute;
+ 
+    left: -1140px;
+    z-index: -50;
+    width: 1140px;
+    height: 728px;
+    transition: 0.5s;
+
+ 
+}
+
+.sect3-bottom-cont{
+    width: 1220px;
+    margin: 0 auto;
+    padding: 150px 0 0 854px;
+    box-sizing: border-box;
+ 
+    margin-top: 50px;
+    transition: 0.7s;
+}
+.sect3-bottom-cont p,span{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.38889;
+    letter-spacing: -0.015em;
+   
+}
+.sect3-bottom-cont p{
+    padding-bottom: 30px;
+    font-weight: 900;
+}
+.sect3-bottom-cont span{
+
+    
+}
+
+.sect3-bottom-cont button{
+    width: 234px;
+    height: 60px;
+    border-radius: 30px;
+    border: 2px solid black;
+    background-color: transparent;
+    color: #000;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: left;
+    margin-top: 75px;
+}
+.sect3-bottom-cont button{
+    background: url("../image/section3/icon_arrow_right.svg")no-repeat ;
+    background-position: right 30px center;
+    background-size: 35px;
+}
+.sect3-bottom-cont button:hover{
+    background: url("../image/section3/icon_arrow_right_white.svg") no-repeat;
+    background-position: right 30px center;
+    background-size: 35px;
+    background-color: red;
+    color: white;
+}
+.object img{
+ 
+    position: absolute;
+    top:-20px;
+    right: 0px;
+    width: 668px;
+    height: 754px;
+    filter: opacity(10%);
+    transform: rotate(-20deg);
+    transition: 0.5s;
+
+}
+
+/* section-4 */
+.section-4{
+    margin-top: 100px;
+    width: 100%;
+    height: 880px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.6s;
+}
+.sec4-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 100%;
+    background-color: #fff;
+    background-image: linear-gradient(90deg, transparent 0, transparent 98.95833%, #000 0, #000), linear-gradient(transparent, transparent 98.95833%, #000 0, #000);
+    background-repeat: repeat;
+    background-position: 50%;
+    background-size: 192px auto, auto 192px;
+    z-index: -2;
+}
+.sec4-txt-bg{
+    width: 1550px;
+    height: 540px;
+    background-color: #d8e9f5;
+    position: absolute;
+    right: -1550px;
+    top: 20%;
+    z-index: -1;
+    transition: 0.5s;
+}
+.sec4-txt{
+    width: 1147px;
+    height: 540px;
+    margin: 0 auto;
+    padding-top: 280px;
+    display: flex;
+    justify-content: space-around;
+}
+.sec4-l p{
+    padding: 10px 0 50px 0;
+    font-weight: 600;
+}
+.sec4-r{
+    margin-left: 150px;
+    font-size: 20px;
+    color: black;
+}
+.sec4-r a{
+    width: 630px;
+    display: block;
+    background: url("../image/section3/icon_arrow_right.svg") no-repeat 100% ;
+    background-position: right 0px top 0px;
+
+ 
+}
+
+.sec4-r h3{
+    color: #000;
+    cursor: pointer;
+    font-family: "mayeka";
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-align: left;
+}  
+
+.sec4-r p{
+    color: #000;
+    font-family: "mayeka";
+    margin: 25px 0;
+    font-size: 20px;
+    font-weight: 800;
+    display: inline-block;
+
+}
+.sec4-r h3::after{
+    content: '';
+    background-color: #000;
+    width: 630px;
+    height: 2px;
+    margin: 15px 0;
+    display: block;
+}
+
+
+button {
+    width: 230px;
+    height: 60px;
+    border-radius: 30px;
+    border: 2px solid #000;
+    font-weight: 700;
+    font-size: 18px;
+    background-position: right 30px center;
+    text-align: left;
+    background: url("../image/section3/icon_arrow_right.svg")no-repeat ;
+    background-position: right 30px center;
+    background-size: 35px;
+}
+
+button:hover {
+
+    background: url("../image/section3/icon_arrow_right_white.svg") no-repeat;
+    background-position: right 30px center;
+    background-size: 35px;
+    background-color: red;
+
+}
+/* section-5 */
+.section-5{
+    width: 100%;
+    height: 760px;
+    padding: 70px 0;
+    background-color: #ffbe9f;
+}
+.section-5 header{
+    text-align: center;
+    margin-top: 30px;
+    transition: 0.5s;
+}
+.section-5 header>h3{
+    font-weight: 500;
+    font-size: 50px;
+}
+.section-5 header>p{
+    margin-top: 40px;
+    font-weight: 700;
+    font-size: 20px;
+}
+.sect5-cont{
+    text-align: center;
+ 
+    margin: 46px auto 0 auto;
+    width: 1120px;
+    
+ 
+}
+.sect5-cont>ul>li{
+    display: inline-block;
+    margin: 4px;
+    transition: all 0.5s linear;
+    overflow: hidden;
+    width: 210px;
+    height: 210px;
+}
+.sect5-cont>ul>li:hover{
+    transform: scale(1.05);
+}
+.sect5-cont>ul>li>a>img{
+    width: 210px;
+    height: 210px;
+}
+/* footer */
+
+footer{
+    width: 100%;
+    height: 350px;
+    background-color: #000;
+    color: #fff;
+}
+.foot-wrap{
+    width: 1175px;
+    margin: 0 auto;
+
+    padding-top: 61px;
+}
+.foot-wrap>div{
+    display: inline-block;
+}
+.foot-left{
+  
+}
+.foot-left h2{
+    margin-bottom: 43px;
+}
+.foot-left ul li{
+    padding-bottom: 18px;
+ 
+}
+.foot-left ul li a{
+    font-size: 20px;
+    font-weight: 900;
+}
+.foot-right{
+    float: right;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.625;
+    position: relative;
+}
+.logo-sns{
+  
+    position: absolute;
+    right: 0;
+}
+.logo-sns>a>img{
+    width: 30px;
+    height: 30px;
+}
+/* .right-after ::after{
+    content: '';
+    width: 2px;
+    height: 16px;
+    background-color: white;
+    display: block  ;
+} */
+.foot-right select{
+    width: 110px;
+    height: 30px;
+    background-color:black;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    text-align: left;
+    background: url('https://eggdrop.co.kr/assets/images/common/icon_select_white.png')no-repeat 100%/20px auto;
+    appearance: none;
+}
+.foot-right>ul{
+    margin-bottom: 20px;
+}
+.foot-right>ul>li{
+    display: inline-block;
+}
+.foot-right>div:nth-child(1){
+    display: flex;
+    margin-bottom: 34px;
+}
+
+.foot-right>div:last-child>p{
+    padding-bottom: 1.5px;
+}
